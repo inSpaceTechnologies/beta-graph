@@ -1,0 +1,38 @@
+{
+  "name": "inspace-graph",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint . --ignore-path .gitignore --ext .js",
+    "serve": "webpack-dev-server",
+    "build": "npm run lint; webpack --mode development --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "d3": "^5.5.0",
+    "express": "^4.16.3",
+    "hammerjs": "^2.0.8",
+    "load-bmfont": "^1.3.0",
+    "stats-js": "^1.0.0-alpha1",
+    "three-bmfont-text": "^2.3.0",
+    "three-full": "^8.0.0"
+  }
+}
