@@ -125,10 +125,7 @@ export default class Renderer {
     const cameraAspectRatio = sceneWidth / sceneHeight;
 
     this._stats = new Stats();
-    this._stats.domElement.style.position = 'absolute';
-    this._stats.domElement.style.right = '12px';
-    this._stats.domElement.style.bottom = '12px';
-    this._stats.domElement.style['z-index'] = '100';
+    this._stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
 
     // init the webgl renderer
     this._renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -168,7 +165,7 @@ export default class Renderer {
     */
 
     container.appendChild(this._renderer.domElement);
-    document.body.appendChild(this._stats.domElement);
+    document.body.appendChild(this._stats.dom);
 
     // place this camera back a little bit
     this._camera.position.set(0, 0, config.camera.initialZ);
@@ -457,7 +454,7 @@ export default class Renderer {
 
   update() {
     // this.controls.update();
-    this._stats.update();
+    this._stats.begin();
 
     this._objects.dropdownButtons.forEach((dropdownButton) => {
       if (this._hoverObject === dropdownButton) {
@@ -470,5 +467,7 @@ export default class Renderer {
     });
 
     this.render();
+
+    this._stats.end();
   }
 }
