@@ -24,6 +24,7 @@ const dataFunctions = {
     controller.removeFilespaceItem(file);
   },
   downloadURL: file => `http://inspace.tv/${file.name()}`,
+  canUpload: () => true,
 };
 
 controller.init(container, dataFunctions, { fnt: '/fonts/roboto.fnt', png: 'fonts/roboto.png' }, () => {
