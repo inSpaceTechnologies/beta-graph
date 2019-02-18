@@ -1,7 +1,7 @@
 /* eslint no-alert: 0 */ // --> OFF
+/* global InspaceGraph */
 
-import '../src/style/style.css';
-import { Controller, Folder, File } from '../src/controller';
+const { Controller, Folder, File } = InspaceGraph;
 
 const container = document.getElementById('container');
 
@@ -27,7 +27,7 @@ const dataFunctions = {
   canUpload: () => true,
 };
 
-controller.init(container, dataFunctions, { fnt: '/fonts/roboto.fnt', png: 'fonts/roboto.png' }, () => {
+controller.init(container, dataFunctions, { fnt: './fonts/roboto.fnt', png: './fonts/roboto.png' }, () => {
   const rootFolder = new Folder('My Files');
   controller.addFilespaceItem(null, rootFolder);
 

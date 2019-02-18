@@ -3,10 +3,11 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: './test/index.js',
+  entry: './index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'test/public'),
+    path: path.resolve(__dirname, 'public'),
+    library: 'InspaceGraph',
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -22,7 +23,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'test/public'),
+    contentBase: path.join(__dirname, 'public'),
     port: 8066,
   },
 };
